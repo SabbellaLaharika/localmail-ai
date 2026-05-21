@@ -49,7 +49,7 @@
         "url": "http://ollama:11434/api/generate",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ model: 'qwen2:0.5b', prompt: 'You are a professional email assistant. Reply to this email:\\n\\nSender: ' + $json.from + '\\nSubject: ' + $json.subject + '\\nBody: ' + $json.text + '\\n\\nOnly provide the reply body.', stream: false }) }}"
+        "jsonBody": "={{ JSON.stringify({ model: 'qwen2:0.5b', prompt: 'You are a professional email assistant. Reply to this email:\\n\\nSender: ' + $json.from.value[0].address + '\\nSubject: ' + $json.subject + '\\nBody: ' + $json.text + '\\n\\nOnly provide the reply body.', stream: false }) }}"
       },
       "name": "HTTP Request",
       "type": "n8n-nodes-base.httpRequest",
@@ -62,7 +62,7 @@
     {
       "parameters": {
         "fromEmail": "slaharisvrsslsmr712@gmail.com",
-        "toEmail": "={{ $node[\"EmailReadImap\"].json.from }}",
+        "toEmail": "={{ $node[\"EmailReadImap\"].json.from.value[0].address }}",
         "subject": "={{ 'Re: AI Auto-Reply: ' + $node[\"EmailReadImap\"].json.subject }}",
         "text": "={{ $node[\"HTTP Request\"].json.response }}",
         "options": {
