@@ -64,7 +64,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "slaharisvrsslsmr712@gmail.com",
+        "fromEmail": "YOUR_TEST_EMAIL@example.com",
         "toEmail": "={{ $node[\"EmailReadImap\"].json.from.value[0].address }}",
         "subject": "={{ 'Re: AI Auto-Reply: ' + $node[\"EmailReadImap\"].json.subject }}",
         "text": "={{ $node[\"HTTP Request\"].json.response }}",
