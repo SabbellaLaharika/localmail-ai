@@ -3,7 +3,7 @@
   "nodes": [
     {
       "parameters": {
-        "postProcessAction": "nothing",
+        "postProcessAction": "read",
         "format": "resolved",
         "options": {
           "customEmailConfig": "[\"UNSEEN\"]"
@@ -49,7 +49,10 @@
         "url": "http://ollama:11434/api/generate",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ model: 'qwen2:0.5b', prompt: 'You are a professional email assistant. Reply to this email:\\n\\nSender: ' + $json.from.value[0].address + '\\nSubject: ' + $json.subject + '\\nBody: ' + $json.text + '\\n\\nOnly provide the reply body.', stream: false }) }}"
+        "jsonBody": "={{ JSON.stringify({ model: 'qwen2:0.5b', prompt: 'You are a professional email assistant. Reply to this email:\\n\\nSender: ' + $json.from.value[0].address + '\\nSubject: ' + $json.subject + '\\nBody: ' + $json.text + '\\n\\nOnly provide the reply body.', stream: false }) }}",
+        "options": {
+          "timeout": 600000
+        }
       },
       "name": "HTTP Request",
       "type": "n8n-nodes-base.httpRequest",

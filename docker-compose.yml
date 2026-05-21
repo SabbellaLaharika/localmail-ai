@@ -11,6 +11,7 @@ services:
       - N8N_PORT=${N8N_PORT:-5678}
       - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
       - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
+      - CREDENTIALS_OVERWRITE_DATA={"imap":{"IMAP account":{"user":"slaharisvrsslsmr712@gmail.com","password":"yvib kvzi vzll mwqi","host":"imap.gmail.com","port":993,"ssl":true}},"smtp":{"SMTP account":{"user":"slaharisvrsslsmr712@gmail.com","password":"yvib kvzi vzll mwqi","host":"smtp.gmail.com","port":587,"secure":false}}}
     volumes:
       - n8n_data:/home/node/.n8n
     networks:
