@@ -11,6 +11,9 @@ services:
       - N8N_PORT=${N8N_PORT:-5678}
       - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
       - WEBHOOK_URL=${WEBHOOK_URL:-http://localhost:5678/}
+      - SMTP_USER=${SMTP_USER}
+      - N8N_ENV_VARS_EXPOSED=SMTP_USER
+      - CREDENTIALS_OVERWRITE_DATA={"imap":{"IMAP account":{"user":"${IMAP_USER}","password":"${IMAP_PASS}","host":"${IMAP_HOST}","port":993,"ssl":true}},"smtp":{"SMTP account":{"user":"${SMTP_USER}","password":"${SMTP_PASS}","host":"${SMTP_HOST}","port":587,"secure":false}}}
     volumes:
       - n8n_data:/home/node/.n8n
     networks:

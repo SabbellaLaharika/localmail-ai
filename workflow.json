@@ -64,7 +64,7 @@
     },
     {
       "parameters": {
-        "fromEmail": "YOUR_TEST_EMAIL@example.com",
+        "fromEmail": "={{ $env[\"SMTP_USER\"] }}",
         "toEmail": "={{ $node[\"EmailReadImap\"].json.from.value[0].address }}",
         "subject": "={{ 'Re: AI Auto-Reply: ' + $node[\"EmailReadImap\"].json.subject }}",
         "text": "={{ $node[\"HTTP Request\"].json.response }}",
