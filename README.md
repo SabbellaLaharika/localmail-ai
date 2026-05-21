@@ -32,14 +32,14 @@ docker-compose up -d
 
 ### 3. AI Model Initialization
 
-Once the containers are running, you need to pull the `qwen2:0.5b` model into the Ollama container (chosen as a small, suitable model per project requirements to fit inside memory limits). You can run the provided setup script:
+Once the containers are running, you need to pull the `llama3:8b` model into the Ollama container (chosen as a small, suitable model per project requirements to fit inside memory limits). You can run the provided setup script:
 
 ```bash
 chmod +x setup-model.sh
 ./setup-model.sh
 ```
 
-*(Alternatively, run the command manually: `docker exec -it ollama ollama pull qwen2:0.5b`)*
+*(Alternatively, run the command manually: `docker exec -it ollama ollama pull llama3:8b`)*
 
 ### 4. Import the n8n Workflow
 1. Navigate to your n8n interface at [http://localhost:5678](http://localhost:5678).
