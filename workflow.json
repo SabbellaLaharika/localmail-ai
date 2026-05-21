@@ -49,7 +49,7 @@
         "url": "http://ollama:11434/api/generate",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ model: 'llama3:8b', prompt: 'You are an intelligent auto-responder acting on behalf of the recipient. You are replying to an incoming email from ' + $json.from.value[0].address + '. Read their email carefully and write a polite, professional, and contextually accurate response. Do NOT assume you own the things they are talking about unless it makes sense. Keep it brief.\\n\\nIncoming Email Subject: ' + $json.subject + '\\nIncoming Email Body: ' + $json.text + '\\n\\nWrite only the body of the reply email. Do not include subject lines or headers.', stream: false }) }}",
+        "jsonBody": "={{ JSON.stringify({ model: 'llama3:8b', prompt: 'You are a helpful assistant. A new email has arrived from ' + ($json.from.address || $json.from.value[0].address) + '. The subject is \\'' + $json.subject + '\\'. The body is: \\n\\n' + $json.text + '.\\n\\nPlease write a suitable reply. Only provide the reply body, without any greeting or signature.', stream: false }) }}",
         "options": {
           "timeout": 600000
         }
