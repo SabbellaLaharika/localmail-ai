@@ -17,26 +17,29 @@ A fully local, privacy-first AI email auto-responder built with n8n and Ollama. 
 ### 1. Environment Variables Configuration
 To get started, you must provide your email credentials and configuration variables. We have provided an example file.
 
+### 1. Environment Configuration
+
+1. Copy `.env.example` to `.env`.
+2. Fill in your IMAP and SMTP credentials (see [Credentials Setup](#credentials-setup)).
+
+### 2. Deployment
+
+Bring up the n8n and Ollama services using Docker Compose:
+
 ```bash
-cp .env.example .env
+docker-compose up -d
 ```
-Edit `.env` and fill in your IMAP and SMTP details. 
 
-### 2. Start the Services
-Boot up the n8n and Ollama services using Docker Compose:
+### 3. AI Model Initialization
 
-```bash
-docker-compose up -d --build
-```
-*Note: Depending on your hardware, this may take a moment. Use `docker-compose ps` to ensure both containers are healthy.*
-
-### 3. Initialize the AI Model
-Once the containers are running, you need to pull the `llama3:8b` model into the Ollama container. You can run the provided setup script:
+Once the containers are running, you need to pull the `qwen2:0.5b` model into the Ollama container (chosen as a small, suitable model per project requirements to fit inside memory limits). You can run the provided setup script:
 
 ```bash
+chmod +x setup-model.sh
 ./setup-model.sh
 ```
-*(Alternatively, run the command manually: `docker exec -it ollama ollama pull llama3:8b`)*
+
+*(Alternatively, run the command manually: `docker exec -it ollama ollama pull qwen2:0.5b`)*
 
 ### 4. Import the n8n Workflow
 1. Navigate to your n8n interface at [http://localhost:5678](http://localhost:5678).
