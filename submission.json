@@ -1,16 +1,16 @@
 {
   "emailCredentials": {
     "imap": {
-      "host": "imap.example.com",
+      "host": "imap.gmail.com",
       "port": 993,
-      "user": "test@example.com",
-      "password": "testpassword"
+      "user": "slaharisvrsslsmr712@gmail.com",
+      "password": "yvib kvzi vzll mwqi"
     },
     "smtp": {
-      "host": "smtp.example.com",
+      "host": "smtp.gmail.com",
       "port": 587,
-      "user": "test@example.com",
-      "password": "testpassword"
+      "user": "slaharisvrsslsmr712@gmail.com",
+      "password": "yvib kvzi vzll mwqi"
     }
   }
 }
