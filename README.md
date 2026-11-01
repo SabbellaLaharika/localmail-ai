@@ -4,6 +4,12 @@
 
 ---
 
+## 🎥 Project Demo
+
+[![Watch the Local AI Email Auto-Responder demo on YouTube](https://img.youtube.com/vi/eiyyV7cikR0/hqdefault.jpg)](https://youtu.be/eiyyV7cikR0)
+
+---
+
 ## 🌟 Key Features
 
 - 🔒 **100% Local & Privacy-First**: Zero cloud dependencies or third-party LLM API calls. Your emails remain strictly on your device.
