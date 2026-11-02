@@ -6,7 +6,7 @@
 
 ## 🎥 Project Demo
 
-[![Watch the Local AI Email Auto-Responder demo on YouTube](https://img.youtube.com/vi/eiyyV7cikR0/hqdefault.jpg)](https://youtu.be/eiyyV7cikR0)
+[![Watch the Local AI Email Auto-Responder demo on YouTube](https://img.youtube.com/vi/eiyyV7cikR0/maxresdefault.jpg)](https://youtu.be/eiyyV7cikR0)
 
 ---
 
